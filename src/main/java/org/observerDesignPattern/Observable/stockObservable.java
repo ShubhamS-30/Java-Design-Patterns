@@ -4,17 +4,13 @@ import org.observerDesignPattern.Observer.NotificationObserver;
 
 /**
  * stockObservable - Observable/Subject Interface in Observer Design Pattern
- *
  * Purpose: Defines the contract for observable objects that can be watched
  * by multiple observer objects
- *
  * Responsibilities:
  * 1. Manage a list of observers
  * 2. Notify all observers when state changes
- *
  * Observable = Subject = Product Stock in this example
  * When stock count changes, all observers are notified
- *
  * Methods:
  * - add(): Observer subscribes to notifications
  * - remove(): Observer unsubscribes from notifications
