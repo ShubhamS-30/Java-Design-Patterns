@@ -1,0 +1,65 @@
+Parking Lot Design - IMPLEMENTED FEATURES:
+✓ Multiple slots for vehicles
+✓ Multiple slot types for different vehicle types (Car, Bike, Truck, Other)
+✓ System calculates parking fee based on duration of parking and type of vehicle
+✓ Dynamic slot allocation based on vehicle type and availability
+✓ Vehicle must complete payment before exiting
+✓ Payment processing with multiple options (Cash, Credit Card)
+✓ Accurate Parking Fee Calculation with different pricing strategies
+✓ System updates parking slot status to available after vacation
+✓ Validation: Cannot park in an occupied slot
+✓ Validation: Vehicles verified before parking in compatible spots
+
+Parking Lot Design - CURRENT VEHICLE TYPES:
+- Bike (2 wheeler)
+- Car (4 wheeler standard)
+- Truck (commercial vehicle)
+- Other (catch-all category)
+
+Parking Lot Design - DESIGN PATTERNS USED:
+
+1. FACTORY PATTERN - Vehicle Creation
+   - VehicleFactory: Creates appropriate vehicle instances
+   - Encapsulates vehicle creation logic
+   - Easy to add new vehicle types
+
+2. STRATEGY PATTERN - Parking Fee Calculation
+   - ParkingFeeStrategy interface with implementations:
+     * BasicHourlyRateStrategy: Rate per hour based on vehicle type
+     * PremiumRateStrategy: Base fee + hourly rate model
+   - Each vehicle carries its own pricing strategy
+   - Runtime strategy selection
+
+3. STRATEGY PATTERN - Payment Processing
+   - PaymentStrategy interface with implementations:
+     * CreditCardPayment: Credit/debit card processing
+     * CashPayment: Cash payment handling
+   - Payment class acts as context
+   - Easy to add new payment methods
+
+4. TEMPLATE METHOD PATTERN - Parking Spot Validation
+   - ParkingSpot abstract class defines structure
+   - canPark() implemented by concrete spot types
+   - Subclasses: CarParkingSpot, BikeParkingSpot
+
+5. FACADE PATTERN - Parking Lot Management
+   - ParkingLot class simplifies complex operations
+   - Single interface for parking/vacation operations
+   - Manages spot allocation and status
+
+FUTURE IMPROVEMENTS:
+- Multi-floor parking lot with floor management
+- Ticket system for entry tracking
+- Observer Pattern for exit notification system
+- Singleton Pattern for centralized ParkingLot management
+- Mobile payment option (Apple Pay, Google Pay, UPI)
+- Real-time spot availability display
+- Dynamic pricing based on occupancy
+- Monthly/weekly pass support
+- Vehicle entry/exit timestamp tracking
+- Revenue analytics and reporting
+- Handicap/reserved spot management
+- Reservation system for pre-booking
+- Thread-safe concurrent access handling
+- Database persistence layer
+- Mobile app/web interface integration
